@@ -1,0 +1,7 @@
+docker build . -t python-app:latest
+docker run -it --rm --name=python-container python-app:latest
+
+docker build . -t node-app:latest
+docker run -p 3000:3000 -d --name=node-container node-app
+docker stop node-container
+docker start node-container
